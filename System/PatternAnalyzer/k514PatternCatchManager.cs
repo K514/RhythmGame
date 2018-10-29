@@ -226,7 +226,7 @@ public class k514PatternCatchManager : MonoBehaviour {
             //}
         #endregion
 
-        float max = k514SystemManager.SYSTEM_YOUTUBE_DATA.m_samplingCount * k514SystemManager.SYSTEM_YOUTUBE_DATA.m_analyzeInterval * 6;
+        float max = k514SystemManager.SYSTEM_YOUTUBE_DATA.SamplingCount * k514SystemManager.SYSTEM_YOUTUBE_DATA.m_analyzeInterval * 6;
         max = k514SystemManager.SYSTEM_SPECTRUM_MANAGER.m_GraphDomainMax / max;
 
         k514SystemManager.SYSTEM_SPECTRUM_MANAGER.AddPointW(new Vector2(max * m_evaluated_nextPattern,0f));

@@ -10,14 +10,14 @@ public class k514SystemManager : MonoBehaviour {
     public static k514MathManager SYSTEM_MATH_MANAGER = null;
     public static k514SpectrumManager SYSTEM_SPECTRUM_MANAGER = null;
     public static k514PatternCatchManager SYSTEM_PATTERN_MANAGER = null;
-	public static k514YoutubeData SYSTEM_YOUTUBE_DATA = null;
+	public static AudioAnalyzePreset SYSTEM_YOUTUBE_DATA = null;
     public static k514SoundManager SYSTEM_SOUND_MANAGER = null;
     public static k514EnemySpawner SYSTEM_ENEMY_SPAWNER = null;
     public static k514PatternGenerator SYSTEM_PATTERN_GENERATOR = null;
 
     // 2G
 
-    public static k514YoutubeApiConnector SYSTEM_YOUTUBE_CONNECTOR = null;
+    public static YoutubeSearcher SYSTEM_YOUTUBE_CONNECTOR = null;
     public static k514YoutubeManager SYSTEM_YOUTUBE_MANAGER = null;
 
 
@@ -30,14 +30,14 @@ public class k514SystemManager : MonoBehaviour {
         SYSTEM_MATH_MANAGER = k514MathManager.singleton;
         SYSTEM_SPECTRUM_MANAGER = k514SpectrumManager.singleton;
         SYSTEM_PATTERN_MANAGER = k514PatternCatchManager.singleton;
-		SYSTEM_YOUTUBE_DATA = k514YoutubeData.singleton;
+		SYSTEM_YOUTUBE_DATA = AudioAnalyzePreset.singleton;
         SYSTEM_SOUND_MANAGER = k514SoundManager.singleton;
         SYSTEM_ENEMY_SPAWNER = k514EnemySpawner.singleton;
         SYSTEM_PATTERN_GENERATOR = k514PatternGenerator.singleton;
 
         // 2G
 
-        SYSTEM_YOUTUBE_CONNECTOR = k514YoutubeApiConnector.singleton;
+        SYSTEM_YOUTUBE_CONNECTOR = YoutubeSearcher.singleton;
         SYSTEM_YOUTUBE_MANAGER = k514YoutubeManager.singleton;
 
 

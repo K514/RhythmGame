@@ -331,14 +331,14 @@ public class k514EventListener : MonoBehaviour {
     }
 
     void ItemInfoSetter() {
-        k514YoutubeApiConnector.k514514YoutubeData[] l_array = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.m_results;
+        YoutubeSearcher.YoutubeSnippet[] l_array = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.SearchResultSet;
         k514SelectorItem l_tmp = null;
         for (int i = 0; i < 15; i++) {
             m_items[i].Hide();
             if (l_array.Length > i) {
                 l_tmp = m_items[i];
                 l_tmp.m_thumbImg.gameObject.SetActive(true);
-                StartCoroutine(k514SystemManager.SYSTEM_YOUTUBE_MANAGER.DownloadThumb(l_array[i].m_thumbs.m_default.m_url
+                StartCoroutine(k514SystemManager.SYSTEM_YOUTUBE_MANAGER.DownloadThumb(l_array[i].ThumbnailSet.DefaultThumbnail.ThumbnailURL
                     , l_tmp.m_thumbImg
                 ));
             }
@@ -350,11 +350,11 @@ public class k514EventListener : MonoBehaviour {
         {
             if (m_desc != null)
             {
-                m_desc.text = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.m_results[m_nowItemIndex].m_desc;
+                m_desc.text = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.SearchResultSet[m_nowItemIndex].VideoDescription;
             }
             if (m_title != null)
             {
-                m_title.text = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.m_results[m_nowItemIndex].m_title;
+                m_title.text = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.SearchResultSet[m_nowItemIndex].Title;
             }
         }
         catch (Exception e) {
@@ -518,7 +518,7 @@ public class k514EventListener : MonoBehaviour {
             Camera.main.orthographicSize = Mathf.Lerp(5f, 3f, l_elapsedTime);
             l_fade.color = new Color(l_fade.color.r, l_fade.color.g, l_fade.color.b, Mathf.Lerp(0f, 1f, l_elapsedTime));
 
-            k514YoutubeManager.SelectedID = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.m_results[m_nowItemIndex].m_videoId;
+            k514YoutubeManager.SelectedID = k514SystemManager.SYSTEM_YOUTUBE_CONNECTOR.SearchResultSet[m_nowItemIndex].VideoID;
             Debug.Log(k514YoutubeManager.SelectedID);
             yield return new WaitForEndOfFrame();
         }
